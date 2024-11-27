@@ -9,8 +9,7 @@ export default function Home() {
       </div>
       <main className="flex flex-col gap-8 row-start-2 items-center">
         <Image
-          className="dark:invert"
-          src="/logo.svg"
+          src="/brand.png"
           alt="Next.js logo"
           width={600}
           height={100}
