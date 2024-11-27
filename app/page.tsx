@@ -19,6 +19,13 @@ export default function Home() {
             <h1 className="text-xl text-center">Empower Your Beauty, Naturally.</h1>
             <p className="text-center text-sm">Discover the perfect blend of luxury, science, and nature in skincare.</p>
         </div>
+                <Image
+          src="/product-1.svg"
+          alt="Next.js logo"
+          width={600}
+          height={100}
+          priority
+        />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <p>Coming soon—subscribe for updates!</p>
