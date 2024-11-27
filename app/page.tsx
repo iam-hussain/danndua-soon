@@ -18,8 +18,29 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="py-20 flex md:flex-row flex-col justify-center items-center align-middle grow">
-          <div className="md:absolute top-0 right-0 -z-10 rotate-12">
+        <div className="py-20 flex flex-col md:grid md:grid-cols-2 ">
+          <div className="flex flex-col gap-6 justify-center align-middle items-end">
+            <div className="flex gap-6 flex-col">
+              <Image
+                src="/brand.png"
+                alt="Next.js logo"
+                className="max-w-full"
+                width={600}
+                height={100}
+                priority
+              />
+              <div className="w-full flex justify-center align-middle flex-col items-center">
+                <h1 className="text-xl text-center">
+                  Empower Your Beauty, Naturally.
+                </h1>
+                <p className="text-center text-sm">
+                  Discover the perfect blend of luxury, science, and nature in
+                  skincare.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="rotate-12 flex">
             <Image
               src="/product-1.svg"
               alt="Next.js logo"
@@ -27,24 +48,6 @@ export default function Home() {
               height={1100}
               priority
             />
-          </div>
-          <div className="flex flex-col gap-6">
-            <Image
-              src="/brand.png"
-              alt="Next.js logo"
-              width={600}
-              height={100}
-              priority
-            />
-            <div className="w-full flex justify-center align-middle flex-col items-center">
-              <h1 className="text-xl text-center">
-                Empower Your Beauty, Naturally.
-              </h1>
-              <p className="text-center text-sm">
-                Discover the perfect blend of luxury, science, and nature in
-                skincare.
-              </p>
-            </div>
           </div>
         </div>
       </main>
