@@ -3,12 +3,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex justify-center align-middle items-center">
       <div className=" absolute top-4 right-4">
         <ThemeModeToggle />
       </div>
-      <main className="flex flex-col gap-8 row-start-2 items-center">
-        <Image
+      <main className="flex gap-8 row-start-2 items-center min-h-svh py-20 m-auto px-8">
+        <div className="flex flex-col gap-6">
+            <Image
           src="/brand.png"
           alt="Next.js logo"
           width={600}
@@ -26,10 +27,11 @@ export default function Home() {
           height={100}
           priority
         />
+        </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      {/* <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <p>Coming soon—subscribe for updates!</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }
