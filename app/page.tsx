@@ -42,10 +42,10 @@ export default function Home() {
           </div>
           <div className="rotate-12 flex">
             <Image
-              src="/product-1.svg"
+              src="/product/pump-10-1.png"
               alt="Next.js logo"
-              width={1600}
-              height={1100}
+              width={200}
+              height={100}
               priority
             />
           </div>
@@ -53,7 +53,7 @@ export default function Home() {
       </main>
       <div className="flex md:flex-row flex-col justify-center align-middle items-center py-20 w-full">
         <Image
-          src="/product-1.svg"
+          src="/product/pump-10.svg"
           alt="Next.js logo"
           width={500}
           height={100}
