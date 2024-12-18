@@ -24,11 +24,11 @@ export default function Home() {
         <div className="flex flex-col md:flex-col justify-center align-middle items-center m-auto">
           <div className="flex flex-col gap-6 justify-center align-middle items-center z-30">
             <div className="flex gap-6 flex-col">
-              <div className="w-full flex justify-center align-middle flex-col items-center gap-4 md:gap-2">
+              <div className="w-full flex justify-center align-middle flex-col items-center">
                 <h1 className="text-center md:text-2xl text-xl">
                   Empower Your Beauty, Naturally.
                 </h1>
-                <p className="text-center text-base text-foreground/70">
+                <p className="text-center md:text-base text-sm text-foreground/70">
                   Discover the perfect blend of luxury, science, and nature in
                   skincare.
                 </p>
