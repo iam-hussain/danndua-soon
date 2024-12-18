@@ -24,8 +24,8 @@ export default function Home() {
         <div className="flex flex-col md:flex-col justify-center align-middle items-center m-auto">
           <div className="flex flex-col gap-6 justify-center align-middle items-center z-30">
             <div className="flex gap-6 flex-col">
-              <div className="w-full flex justify-center align-middle flex-col items-center">
-                <h1 className="text-center text-2xl">
+              <div className="w-full flex justify-center align-middle flex-col items-center gap-4 md:gap-2">
+                <h1 className="text-center md:text-2xl text-xl">
                   Empower Your Beauty, Naturally.
                 </h1>
                 <p className="text-center text-base text-foreground/70">
@@ -89,12 +89,12 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col justify-center align-middle items-center py-20 w-full gap-8 px-8">
+      <div className="flex md:flex-row flex-col justify-center align-middle items-center py-20 w-full md:gap-8 gap-4 px-8">
         <div className="flex">
           <Instagram className="h-24 w-24 text-foreground/80" />
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-lg">
+          <p className="text-lg text-center md:text-left">
             Let’s connect on Instagram! Stay updated on our latest products,
             tips, and offers.
           </p>
