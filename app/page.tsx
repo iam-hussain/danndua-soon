@@ -1,9 +1,15 @@
 import { ThemeModeToggle } from "@/components/atoms/theme-mode-toggle";
 import Image from "next/image";
+import { Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center align-middle items-center m-auto">
+      <div className="fixed top-2 right-6">
+        <ThemeModeToggle />
+      </div>
       <main className="flex flex-col gap-8 row-start-2 items-center min-h-svh w-full px-8">
         <nav className="flex py-4 justify-between w-full">
           <Image
@@ -13,14 +19,20 @@ export default function Home() {
             height={100}
             priority
           />
-          <div className="">
-            <ThemeModeToggle />
-          </div>
         </nav>
 
-        <div className="py-20 flex flex-col md:grid md:grid-cols-2 ">
-          <div className="flex flex-col gap-6 justify-center align-middle items-end">
+        <div className="flex flex-col md:flex-col justify-center align-middle items-center m-auto">
+          <div className="flex flex-col gap-6 justify-center align-middle items-center z-30">
             <div className="flex gap-6 flex-col">
+              <div className="w-full flex justify-center align-middle flex-col items-center">
+                <h1 className="text-center text-2xl">
+                  Empower Your Beauty, Naturally.
+                </h1>
+                <p className="text-center text-base text-foreground/70">
+                  Discover the perfect blend of luxury, science, and nature in
+                  skincare.
+                </p>
+              </div>
               <Image
                 src="/brand.png"
                 alt="Next.js logo"
@@ -29,21 +41,21 @@ export default function Home() {
                 height={100}
                 priority
               />
-              <div className="w-full flex justify-center align-middle flex-col items-center">
-                <h1 className="text-xl text-center">
-                  Empower Your Beauty, Naturally.
-                </h1>
-                <p className="text-center text-sm">
-                  Discover the perfect blend of luxury, science, and nature in
-                  skincare.
-                </p>
-              </div>
             </div>
           </div>
-          <div className="rotate-12 flex">
+          <div className="z-10 p-4 max-w-screen-lg overflow-hidden flex md:pt-10">
             <Image
+            className="h-[400px] md:hidden w-auto"
               src="/product/pump-10-1.png"
-              alt="Next.js logo"
+              alt="Product Pump"
+              width={200}
+              height={100}
+              priority
+            />
+             <Image
+            className="hidden md:block md:h-[200px] w-auto"
+              src="/product/pump-10-1-h.png"
+              alt="Product Pump"
               width={200}
               height={100}
               priority
@@ -51,17 +63,18 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div className="flex md:flex-row flex-col justify-center align-middle items-center py-20 w-full">
+      <div className="flex md:flex-row flex-col-reverse justify-center align-middle items-center py-20 w-full gap-8 px-8">
         <Image
-          src="/product/pump-10.svg"
+          src="/product/pump-10-cropped.svg"
           alt="Next.js logo"
-          width={500}
+          width={300}
           height={100}
           priority
         />
-        <div className="max-w-4xl flex flex-col gap-2">
+        {/* <Lottie src="https://cdn.lottielab.com/l/7uDNJPJS8tnqgM.json" autoplay /> */}
+        <div className="flex flex-col gap-2 max-w-lg text-center md:text-left">
           <h2 className="text-5xl">Lorem ipsum</h2>
-          <p>
+          <p className="text-pretty text-base text-foreground/70">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             eros metus, imperdiet in aliquet in, malesuada efficitur elit. Sed a
             augue vehicula dolor maximus suscipit ut quis purus. Sed eu ex
@@ -76,9 +89,21 @@ export default function Home() {
           </p>
         </div>
       </div>
-      {/* <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <p>Coming soon—subscribe for updates!</p>
-      </footer> */}
+      <div className="flex md:flex-row flex-col justify-center align-middle items-center py-20 w-full gap-8 px-8">
+        <div className="flex">
+          <Instagram className="h-24 w-24 text-foreground/80" />
+        </div>
+        <div className="flex flex-col gap-2">
+          <p className="text-lg">
+            Let’s connect on Instagram! Stay updated on our latest products,
+            tips, and offers.
+          </p>
+          <Button asChild><Link href={'https://www.instagram.com/danndua'} target="_blank">Follow Us!</Link></Button>
+        </div>
+      </div>
+      <footer className="flex md:flex-row flex-col justify-center align-middle items-center py-20 w-full gap-8 px-8">
+        <p className="text-base text-foreground/70">Coming soon—subscribe for updates!</p>
+      </footer>
     </div>
   );
 }
