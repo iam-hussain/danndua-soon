@@ -91,7 +91,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col justify-center align-middle items-center py-10 w-full md:gap-8 gap-4 px-6">
+      <div className="flex md:flex-row flex-col justify-center align-middle items-center py-10 w-full md:gap-8 gap-4 px-8">
         <div className="flex flex-col gap-8">
           <div className="flex max-w-sm flex-col gap-6 justify-center align-middle items-center m-auto">
             <div className="flex">

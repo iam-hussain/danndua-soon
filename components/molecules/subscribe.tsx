@@ -26,7 +26,7 @@ export default function Subscribe() {
       <div className={cn("flex flex-col text-center w-full px-2 absolute duration-300 transition-all ease-in-out delay-300 opacity-0", {
         "opacity-100": submitted
       })}>
-          <p className="text-xl">
+          <p className="md:text-xl text-lg">
             Thank you for connecting with DAN N DUA!
             <br />
             You&apos;ll hear from us soon with exciting updates and offers.
