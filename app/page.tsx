@@ -104,7 +104,7 @@ export default function Home() {
               </p>
               <Button asChild>
                 <Link
-                  href={"https://www.instagram.com/danndua"}
+                  href={"https://www.instagram.com/dan_n_dua"}
                   target="_blank"
                 >
                   Follow Us!
