@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import Script from "next/script";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.danndua.com"),
   title: {
@@ -80,6 +81,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-paper">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-XDST1KYDK8"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XDST1KYDK8');
+          `}
+        </Script>
+      </head>
       <body className="bg-paper">
         <ThemeProvider>{children}</ThemeProvider>
         <Toaster />
