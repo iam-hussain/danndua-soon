@@ -3,11 +3,9 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import Subscribe from "@/components/molecules/subscribe";
 import FollowUs from "@/components/molecules/follow-us";
-import Tracker from "@/components/molecules/tracker";
 
 export default function Home() {
   return (
-    <Tracker>
       <div className="flex flex-col justify-center align-middle items-center m-auto">
         <div className="fixed top-2 right-6">
           <ThemeModeToggle />
@@ -27,9 +25,9 @@ export default function Home() {
             <div className="flex flex-col gap-6 justify-center align-middle items-center z-30">
               <div className="flex gap-6 flex-col">
                 <div className="w-full flex justify-center align-middle flex-col items-center">
-                  <h1 className="text-center md:text-2xl text-xl">
+                  <h2 className="text-center md:text-2xl text-xl">
                     Empower Your Beauty, Naturally.
-                  </h1>
+                  </h2>
                   <p className="text-center md:text-base text-sm text-foreground/70">
                     Discover the perfect blend of luxury, science, and nature in
                     skincare.
@@ -43,6 +41,7 @@ export default function Home() {
                   height={100}
                   priority
                 />
+                <h1 className="hidden">DAN N DUA</h1>
               </div>
             </div>
             <div className="z-10 p-4 max-w-screen-lg overflow-hidden flex md:pt-10">
@@ -110,6 +109,5 @@ export default function Home() {
           </p>
         </footer>
       </div>
-    </Tracker>
   );
 }

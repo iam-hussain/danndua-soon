@@ -1,10 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { usePageTracking } from "@/components/hooks/usePageTracking";
 import { useEffect } from "react";
 
-export default function Tracker({ children }: any) {
-  usePageTracking(); // Hook to track page views and time
+export default function Tracker() {
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const url = window.location.pathname; // Get the current path
+      if (window.gtag) {
+        window.gtag('event', 'page_view', {
+          page_path: url,
+        });
+      }
+    };
+
+    // Initial page load tracking
+    handleRouteChange();
+
+    // Listen for popstate events (triggered by browser navigation)
+    window.addEventListener('popstate', handleRouteChange);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.gtag) {
@@ -39,11 +58,11 @@ export default function Tracker({ children }: any) {
 
   useEffect(() => {
     const startTime = Date.now();
-  
+
     return () => {
       const endTime = Date.now();
       const timeSpent = (endTime - startTime) / 1000; // in seconds
-  
+
       if (typeof window !== "undefined" && window.gtag) {
         window.gtag("event", "page_time", {
           event_category: "Time Spent",
@@ -53,9 +72,6 @@ export default function Tracker({ children }: any) {
       }
     };
   }, []);
-  
 
-  return (
-    <>{children}</>
-  );
+  return <></>;
 }

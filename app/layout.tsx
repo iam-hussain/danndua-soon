@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import Script from "next/script";
+import Tracker from "@/components/molecules/tracker";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.danndua.com"),
   title: {
@@ -34,9 +35,6 @@ export const metadata: Metadata = {
     "Hydrating Cream for Women",
   ],
   referrer: "origin",
-  themeColor: "#eee5f3",
-  colorScheme: "light",
-  viewport: "width=device-width, initial-scale=1",
   creator: "DAN N DUA Team",
   publisher: "DAN N DUA",
   robots: "index, follow",
@@ -74,6 +72,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: '#fff',
+  colorScheme: 'light',
+  viewport: 'width=device-width, initial-scale=1',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -101,6 +105,7 @@ export default function RootLayout({
       <body className="bg-paper">
         <ThemeProvider>{children}</ThemeProvider>
         <Toaster />
+        <Tracker />
       </body>
     </html>
   );
