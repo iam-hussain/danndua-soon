@@ -36,6 +36,17 @@ export default function SubscribeFrom({
     defaultValues: defaultValues,
   });
 
+  function handleSubscribe() {
+    if (typeof window !== "undefined" && window.gtag) {
+      // Log the subscription event
+      window.gtag("event", "subscribe", {
+        event_category: "Subscription",
+        event_label: "Newsletter Subscription",
+        value: 1,
+      });
+    }
+  }
+
   async function onSubmit(values: FormSchemaType) {
     try {
       const response = await createSubscriber(values);
@@ -43,6 +54,7 @@ export default function SubscribeFrom({
       if (response.success) {
         console.log(values);
         form.reset(defaultValues);
+        handleSubscribe();
         onSuccess();
       } else {
         toast.error("Failed to submit the form. Please try again.");
