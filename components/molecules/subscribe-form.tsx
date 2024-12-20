@@ -2,7 +2,6 @@
 import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,32 +16,37 @@ import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-
-const formSchema = z.object({
-  email: z.string({ message: "" }).email({ message: "" }),
-  phone: z.string().optional(),
-  comments: z.string().optional(),
-  agree: z.boolean({ message: "" }),
-});
+import { formSchema, FormSchemaType } from "@/lib/form";
+import { createSubscriber } from "@/app/actions";
 
 const defaultValues = {
   email: undefined,
-  phone: '',
+  phone: "",
   comments: "",
-  agree: undefined
-}
+  agree: undefined,
+};
 
-export default function SubscribeFrom({ onSuccess }: { onSuccess: () => void }) {
-  const form = useForm<z.infer<typeof formSchema>>({
+export default function SubscribeFrom({
+  onSuccess,
+}: {
+  onSuccess: () => void;
+}) {
+  const form = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
-    defaultValues: defaultValues
+    defaultValues: defaultValues,
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: FormSchemaType) {
     try {
-      console.log(values);
-      form.reset(defaultValues);
-      onSuccess()
+      const response = await createSubscriber(values);
+      console.log({ response });
+      if (response.success) {
+        console.log(values);
+        form.reset(defaultValues);
+        onSuccess();
+      } else {
+        toast.error("Failed to submit the form. Please try again.");
+      }
       // toast.success("Thank you for connecting with DAN N DUA! You'll hear from us soon with exciting updates and offers.");
     } catch (error) {
       console.error("Form submission error", error);
