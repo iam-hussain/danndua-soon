@@ -6,6 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import Script from "next/script";
 import Tracker from "@/components/molecules/tracker";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.danndua.com"),
   title: {
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "DAN N DUA",
     images: [
       {
-        url: "https://www.danndua.com/og-image.jpg",
+        url: "https://www.danndua.com/og-image.jpeg",
         width: 1200,
         height: 630,
         alt: "DAN N DUA Cream - Canada's Premier Skincare",
@@ -68,14 +69,14 @@ export const metadata: Metadata = {
     title: "DAN N DUA - Empower Your Beauty Naturally",
     description:
       "Discover DAN N DUA, the premier women's skincare brand offering luxurious and effective solutions for personal care.",
-    images: ["https://www.danndua.com/og-image.jpg"],
+    images: ["https://www.danndua.com/og-image.jpeg"],
   },
 };
 
 export const viewport = {
-  themeColor: '#fff',
-  colorScheme: 'light',
-  viewport: 'width=device-width, initial-scale=1',
+  themeColor: "#fff",
+  colorScheme: "light",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
