@@ -139,7 +139,10 @@ export default function Home() {
               height={200}
               priority
             />
-            <p className="text-foreground/70 text-sm">RESPONSIBLE SOURCING</p>
+            <p className="text-foreground/70 text-sm">
+              RESPONSIBLE
+              <br /> SOURCING
+            </p>
           </div>
           <div className="flex flex-col gap-2 justify-center align-middle items-center">
             <Image
@@ -150,7 +153,10 @@ export default function Home() {
               height={200}
               priority
             />
-            <p className="text-foreground/70 text-sm">ACTS OF SOLIDARITY</p>
+            <p className="text-foreground/70 text-sm">
+              ACTS OF
+              <br /> SOLIDARITY
+            </p>
           </div>
           <div className="flex flex-col gap-2 justify-center align-middle items-center">
             <Image
@@ -246,7 +252,7 @@ export default function Home() {
           indulge in the luxury of nature while avoiding harsh chemicals on your
           skin. Experience pure, effective skincare the way it was meant to be.
         </p>
-        <p className="italic text-foreground/80">
+        <p className="italic text-foreground/80 text-center max-w-2xl">
           Stay tuned – Suggestions are welcome, please write us at
           ideas@dandua.com.
         </p>
