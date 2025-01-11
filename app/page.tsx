@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-col justify-center align-middle items-center m-auto">
           <div className="flex flex-col gap-6 justify-center align-middle items-center z-30">
-            <div className="flex gap-6 flex-col">
+            <div className="flex gap-12 flex-col">
               <div className="w-full flex justify-center align-middle flex-col items-center gap-2">
                 <h2 className="text-center text-3xl">
                   Empower Your <br className="md:hidden" />
@@ -37,7 +37,7 @@ export default function Home() {
               <Image
                 src="/brand.png"
                 alt="DAN N DUA"
-                className="max-w-full"
+                className="max-w-full md:pb-4 pb-12"
                 width={600}
                 height={100}
                 priority
@@ -45,7 +45,7 @@ export default function Home() {
               <h1 className="hidden">DAN N DUA</h1>
             </div>
           </div>
-          <div className="z-10 p-4 max-w-screen-lg overflow-hidden flex md:pt-10 flex-col">
+          <div className="z-10 max-w-screen-lg overflow-hidden flex md:pt-10 flex-col">
             {/* <Image
               className="h-[400px] md:hidden w-auto"
               src="/product/pump-10-1.png"
@@ -59,7 +59,7 @@ export default function Home() {
               src="/product/pump-10-2-h.png"
               alt="DAN N DUA - Product Pump Open"
               width={200}
-              height={100}
+              height={200}
               priority
             />
             <Image
@@ -67,7 +67,7 @@ export default function Home() {
               src="/product/pump-10-1-h.png"
               alt="DAN N DUA - Product Pump Close"
               width={200}
-              height={100}
+              height={200}
               priority
             />
           </div>
